@@ -8,5 +8,7 @@ Aplicação básica utilizando backend NodeJS
 ### Instalação
 `npm install`
 
+- Criar arquivo .env e definir variável `APP_PORT`, associando-a à porta da aplicação. 
+
 ### Rodando o Projeto
 `npm run start-dev`
