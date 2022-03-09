@@ -25,7 +25,7 @@ server.use(mainRoutes);
 
 // fallback
 server.use((req: Request, res: Response) => {
-    res.send('Página não encontrada!');
+    res.render('pages/404');
 })
 
 // "Escutando"

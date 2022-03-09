@@ -7,6 +7,12 @@
         <h2>{{ title }} disponíveis para adoção</h2>
     {{ /banner }}
 
+    {{ #query }}
+        <section style="margin-top: 25px;" class="container">
+            <p>Buscando por: <span style="font-size: 1.2rem; color: var(--main);">{{ query }}</span></p>
+        </section>
+    {{ /query }}
+
     <div class="container list">
         {{ #pets }}
             <div class="item">
@@ -17,5 +23,11 @@
             </div>
         {{ /pets }}
     </div>
+
+    {{ ^pets }}
+        <div class="container no-list">
+            <h2>Não há animais disponíveis nestas condições</h2>
+        </div>
+    {{ /pets }}
 
 {{ >partials/footer }}
