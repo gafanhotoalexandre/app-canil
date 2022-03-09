@@ -1,9 +1,12 @@
+type PetType = 'dog' | 'cat' | 'fish';
+type PetSex = 'Masculino' | 'Feminino';
+
 type Pet = {
-    type: 'dog' | 'cat' | 'fish',
+    type: PetType,
     image: string,
     name: string,
     color: string,
-    sex: 'Masculino' | 'Feminino'
+    sex: PetSex
 };
 
 const data: Pet [] = [
@@ -132,6 +135,14 @@ const data: Pet [] = [
 const Pet = {
     all: (): Pet[] => {
         return data;
+    },
+    findByType: (type: PetType): Pet[] => {
+        return data.filter(item => item.type === type);
+    },
+    findByName: (name: string): Pet[] => {
+        return data.filter(item =>
+            item.name.toLowerCase().indexOf(name.toLowerCase()) > -1
+        );
     }
 };
 
